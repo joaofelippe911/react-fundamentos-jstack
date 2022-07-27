@@ -1,12 +1,16 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.header`
-  background: #111;
+  ${({ theme }) => css`
+    background: ${theme.headerBackgroundColor};
+    padding: 0 ${`${theme.spacing.large}px`};
+    border-radius: ${theme.borderRadius};
+  `}
+  
   height: 100px;
   display: flex;
   align-items: center;
-  padding: 0 24px;
-  border-radius: 10px;
+  
   justify-content: space-between;
 
   button {
